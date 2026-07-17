@@ -9,6 +9,8 @@
 // Bonus: The dataset is identical in the PostgreSQL database, meaning the same business insight can be retrieved.
 // Write the equivalent query for PostgreSQL. See query_task4_bonus.sql
 
+db.orders.aggregate([{ $group: { _id: null, total_revenue: { $sum: "$total_price" } } }, { $project: { _id: 0, total_revenue: 1 } }]);
+
 // ---------------------------------------------------------------
 // Your thinking process (required)
 // ---------------------------------------------------------------
@@ -18,4 +20,5 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+//      ใช้วิธีการรวมรายได้จาก โดยใช้ aggregate จาก collection orders มาทั้งหมด และให้แสดงผลเฉพาะรายได้ท้งหมด
+// โดยใช้ total_revenue
