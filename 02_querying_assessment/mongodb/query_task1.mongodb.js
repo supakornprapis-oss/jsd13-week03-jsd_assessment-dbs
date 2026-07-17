@@ -8,6 +8,8 @@
 // Bonus: The dataset is identical in the PostgreSQL database, meaning the same business insight can be retrieved.
 // Write the equivalent query for PostgreSQL. See query_task1_bonus.sql
 
+use("chrome-burger-db");
+db.menu_items.find({ price: { $lt: 10.00 } })
 // ---------------------------------------------------------------
 // Your thinking process (required)
 // ---------------------------------------------------------------
@@ -17,4 +19,5 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+//      ใช้ฐานข้อมูลจาก chrome-burger-db และเข้าไปสำรวจราคาใน collection menu_item ว่าที่รายการใดบ้างที่ มีราคาต่ำกว่า 10 เหรียญ
+// โดยใช้คำสั่ง find() ในการค้นหารายการอาหาร
