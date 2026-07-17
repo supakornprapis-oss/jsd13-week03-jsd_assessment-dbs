@@ -8,6 +8,9 @@
 // Bonus: The dataset is identical in the PostgreSQL database, meaning the same business insight can be retrieved.
 // Write the equivalent query for PostgreSQL. See query_task3_bonus.sql
 
+use("chrome-burger-db");
+db.ingredients.find({ stock_level: { $gte: 100 } }).sort({ stock_level: 1 });
+
 // ---------------------------------------------------------------
 // Your thinking process (required)
 // ---------------------------------------------------------------
@@ -17,4 +20,5 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+//      ใช้ฐานข้อมูลจาก chrome-burger-db ค้นหา stock ที่เท่ากับหรือมากกว่า 100 โดยใช้ find() ใน collection ingredients -> stock_level
+// ใช้ $gte เป็นตัวกำหนด ใช้ .sort ในการเรียงลำดับจากน้อยไปหามาก
