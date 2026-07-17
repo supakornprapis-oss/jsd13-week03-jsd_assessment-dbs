@@ -10,6 +10,12 @@
 -- Bonus: The dataset is identical in the MongoDB database, meaning the same business insight can be retrieved.
 -- Write the equivalent query for MongoDB. See query_task3_bonus.mongodb.js
 
+SELECT staff.first_name || ' ' || staff.last_name AS full_name, COUNT(orders.staff_id) AS total_orders FROM orders
+JOIN staff 
+ON orders.staff_id = staff.staff_id
+GROUP BY staff.staff_id, full_name
+ORDER BY total_orders DESC;
+
 -- ---------------------------------------------------------------
 -- Your thinking process (required)
 -- ---------------------------------------------------------------
@@ -19,4 +25,4 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+--      ต้องการแสดงให้เห็นว่าพนักงาน แต่ละคนรับออเดอร์ไปเท่าไร เรียงจากมากไปน้อย เพื่อให้คนที่ได้เยอะที่สุด ได้รับรางวัล

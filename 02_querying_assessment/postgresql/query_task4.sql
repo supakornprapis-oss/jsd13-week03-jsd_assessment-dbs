@@ -4,9 +4,13 @@
 -- which ingredients depend on that supplier, so they can assess the impact on the menu.
 --
 -- Hint: Write a query to find the names of all ingredients supplied by 'Freshest Farm Produce'.
-
--- Bonus: The dataset is identical in the MongoDB database, meaning the same business insight can be retrieved.
+ -- Bonus: The dataset is identical in the MongoDB database, meaning the same business insight can be retrieved.
 -- Write the equivalent query for MongoDB. See query_task4_bonus.mongodb.js
+
+SELECT Ingredients.name
+FROM Ingredients
+JOIN Suppliers ON Ingredients.supplier_id = Suppliers.supplier_id
+WHERE Suppliers.name = 'Freshest Farm Produce';
 
 -- ---------------------------------------------------------------
 -- Your thinking process (required)
@@ -17,4 +21,4 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+--     หา Ingredients ที่มาจาก Suppliers ชื่อ Freshest Farm เพื่อใช้ในการประเมินความล่าช้า
